@@ -42,8 +42,8 @@ looks_like = str(w_desc[0]['description']).capitalize()
 # Print weather descriptions.
 print("-" * 30)
 print("Vädret i", city.capitalize() + ":")
-print("Temperatur:", temp + "C")
-print("Känns som:", feels_like + "C")
-print("Ser ut som:", looks_like)
+print("Temperatur:", temp + "c")
+print("Känns som:", feels_like + "c")
+print("Väder just nu:", looks_like)
 print("-" * 30)
 
