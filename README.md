@@ -4,4 +4,5 @@ All the things in this repo go under the [MIT license](https://github.com/Panera
 * * *
 | # | Name | Date of creation |
 |-|-|-|
-| 1 |[CLI-CALC](https://github.com/PaneradFisk/Python-Collection/blob/main/cli-calc.py)| 2021-04-26 |
+| 1 |[CLI-Calulator](https://github.com/PaneradFisk/python-collection/blob/main/calculator/cli-calc.py)| 2021-04-26 |
+| 2 |[CLI-Weather](https://github.com/PaneradFisk/python-collection/blob/main/weather/weather.py)| 2021-08-19 |
