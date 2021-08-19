@@ -1,0 +1,50 @@
+# api.openweathermap.org/data/2.5/weather?q={city}&lang=sv&appid={API_KEY}&units=metric
+
+
+import requests
+import json
+import os
+from dotenv import load_dotenv
+load_dotenv()
+
+from requests.models import Response
+from requests.sessions import requote_uri
+
+api_key = os.environ.get("APIKEY")
+URL = "http://api.openweathermap.org/data/2.5/weather?"
+city = input("Välj stad: ")
+
+
+parameters = {
+    "lang": "sv",
+    "units": "metric",
+    "appid": api_key,
+    "q": city
+}
+
+response = requests.get(url=URL, params=parameters)
+response.raise_for_status()
+
+# Load JSON data into a Python variable
+weatherData = json.loads(response.text)
+# print(weatherData)
+
+# Compute Python variables from response
+w_main = weatherData['main']
+w_desc = weatherData['weather']
+temp = str(w_main['temp'])
+feels_like = str(w_main['feels_like'])
+looks_like = str(w_desc[0]['description']).capitalize()
+
+
+# Print weather descriptions.
+print("-" * 30)
+print("Vädret i", city.capitalize() + ":")
+print("Temperatur:", temp + "C")
+print("Känns som:", feels_like + "C")
+print("Ser ut som:", looks_like)
+print("-" * 30)
+
+# TODO things
+
+
