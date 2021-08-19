@@ -1,5 +1,7 @@
+# Check weather in a city using OpenWeatherMap API
 # api.openweathermap.org/data/2.5/weather?q={city}&lang=sv&appid={API_KEY}&units=metric
 
+# Script written with/for Swedish output
 
 import requests
 import json
@@ -14,7 +16,7 @@ api_key = os.environ.get("APIKEY")
 URL = "http://api.openweathermap.org/data/2.5/weather?"
 city = input("Välj stad: ")
 
-
+# Setup parameters for complete URL
 parameters = {
     "lang": "sv",
     "units": "metric",
@@ -27,7 +29,7 @@ response.raise_for_status()
 
 # Load JSON data into a Python variable
 weatherData = json.loads(response.text)
-# print(weatherData)
+
 
 # Compute Python variables from response
 w_main = weatherData['main']
@@ -44,7 +46,4 @@ print("Temperatur:", temp + "C")
 print("Känns som:", feels_like + "C")
 print("Ser ut som:", looks_like)
 print("-" * 30)
-
-# TODO things
-
 
