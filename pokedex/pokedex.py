@@ -20,15 +20,15 @@ def check_internet_connection():
 # Verify internet connection required to do API calls.
 check_internet_connection()
 
-
-pokemon_url = "https://pokeapi.co/api/v2/pokemon/"
 gen_url = "https://pokeapi.co/api/v2/generation/"
+pokemon_url = "https://pokeapi.co/api/v2/pokemon/"
 
-pokemon_input = input("Pokémon name or #: ")
 gen_input = input("Select generation #: ")
+pokemon_input = input("Pokémon name or #: ")
+
 
 url = gen_url + gen_input
-#url = pokemon_url + pokemon_input
+# url = pokemon_url + pokemon_input
 
 r = requests.get(url)
 r.raise_for_status
@@ -37,6 +37,10 @@ pkdata = json.loads(r.text)
 
 
 # Functions to extract data from JSON
+
+
+def get_generation():  # TODO
+    return
 
 
 def get_index():
@@ -66,8 +70,18 @@ def get_base_stat():
     for i in range(0, len(pokemon_stats_data)):
         stats_numbers.append(pokemon_stats_data[i]["base_stat"])
         stats_names.append(pokemon_stats_data[i]["stat"]["name"])
-        print(str(pokemon_stats_data[i]["stat"]["name"]).capitalize(
-        )+":", pokemon_stats_data[i]["base_stat"])
+        print(
+            str(pokemon_stats_data[i]["stat"]["name"]).capitalize() + ":",
+            pokemon_stats_data[i]["base_stat"],
+        )
+
+
+def get_sprite():  # TODO
+    return
+
+
+def get_evolution_line():  # TODO
+    return
 
 
 # Running everything
